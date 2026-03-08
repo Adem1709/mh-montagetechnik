@@ -1,0 +1,61 @@
+<% /* KONTAKT PAGE
+   Forma lidhet me backend SMTP, por dizajni ndryshohet vetëm nga CSS.
+*/ %>
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h1>Kontakt</h1>
+        <p class="muted">Kostenlose Beratung & Aufmaß in <%= SITE.region %>.</p>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <div><strong>Telefon</strong><div><a href="tel:<%= SITE.phone.replace(/\s/g,'') %>"><%= SITE.phone %></a></div></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">✉</div>
+            <div><strong>E-Mail</strong><div><a href="mailto:<%= SITE.email %>"><%= SITE.email %></a></div></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">📍</div>
+            <div><strong>Adresse</strong><div><%= SITE.street %>, <%= SITE.zipCity %></div></div>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Hinweis:</strong> Wir beantworten Anfragen in der Regel innerhalb von 24 Stunden (Werktage).
+        </div>
+      </div>
+
+      <form class="form" id="angebot" data-contact-form>
+        <h2>Angebot anfordern</h2>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+
+        <!-- honeypot (bots) -->
+        <input class="hp" name="company" autocomplete="off" tabindex="-1" aria-hidden="true" />
+
+        <div class="form__row">
+          <label>Name<input name="name" required placeholder="Ihr Name"/></label>
+          <label>Telefon<input name="phone" placeholder="+49 ..." /></label>
+        </div>
+        <label>E-Mail<input name="email" type="email" required placeholder="name@mail.de"/></label>
+        <label>Nachricht<textarea name="message" rows="6" required placeholder="Produkt (Fenster/Türen/Rollläden), Maße, Ort, Terminwunsch..."></textarea></label>
+
+        <label class="check">
+          <input type="checkbox" required />
+          <span>Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und akzeptiere sie.</span>
+        </label>
+
+        <button class="btn btn--primary" type="submit">Senden</button>
+        <p class="muted small" id="contactStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

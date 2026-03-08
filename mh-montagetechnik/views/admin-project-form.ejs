@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title><%= mode === 'create' ? 'Neues Projekt' : 'Projekt bearbeiten' %> | Admin</title>
+  <link rel="stylesheet" href="/public/css/styles.css"/>
+</head>
+<body>
+  <main class="container admin">
+    <h1><%= mode === 'create' ? 'Neues Projekt' : 'Projekt bearbeiten' %></h1>
+
+    <form class="form" method="POST" enctype="multipart/form-data"
+      action="<%= mode==='create' ? '/admin/projects/new' : ('/admin/projects/' + project.id + '/edit') %>">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+
+      <label>Titel
+        <input name="title" required value="<%= project.title %>" />
+      </label>
+
+      <label>Kategorie
+        <select name="category" required>
+          <% const cats = ["Fenster","Türen","Rollläden","Jalousien","Pergola"]; %>
+          <% cats.forEach(c => { %>
+            <option value="<%= c %>" <%= project.category===c ? "selected":"" %>><%= c %></option>
+          <% }) %>
+        </select>
+      </label>
+
+      <label>Beschreibung
+        <textarea name="description" rows="4"><%= project.description || "" %></textarea>
+      </label>
+
+      <label>Bilder (mehrere möglich)
+        <input type="file" name="images" accept="image/png,image/jpeg,image/webp" multiple />
+      </label>
+
+      <% if (mode === "edit") { %>
+        <div class="card" style="padding:12px;">
+          <p class="muted small"><strong>Vorhandene Bilder</strong> (Cover auswählen / löschen):</p>
+
+          <div class="img-grid">
+            <% (images || []).forEach(img => { %>
+              <div class="img-tile">
+                <img src="<%= img.image_path %>" alt="">
+                <div class="img-actions">
+                  <label class="check">
+                    <input type="radio" name="setCoverImageId" value="<%= img.id %>" <%= (project.cover_image_path===img.image_path ? "checked" : "") %> />
+                    <span>Cover</span>
+                  </label>
+
+                  <label class="check">
+                    <input type="checkbox" name="deleteImageIds" value="<%= img.id %>" />
+                    <span>Löschen</span>
+                  </label>
+                </div>
+              </div>
+            <% }) %>
+
+            <% if (!images || images.length === 0) { %>
+              <p class="muted">Keine Bilder vorhanden.</p>
+            <% } %>
+          </div>
+
+          <p class="muted small">Tipp: Nach dem Speichern wird das Cover aktualisiert.</p>
+        </div>
+      <% } %>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn btn--primary" type="submit">Speichern</button>
+        <a class="btn btn--ghost" href="/admin">Zurück</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= meta?.title || SITE.name %></title>
+  <meta name="description" content="<%= meta?.description || '' %>"/>
+  <link rel="canonical" href="<%= meta?.canonical || SITE.siteUrl %>"/>
+
+  <meta property="og:title" content="<%= meta?.title || SITE.name %>"/>
+  <meta property="og:description" content="<%= meta?.description || '' %>"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Avoid external Google Fonts (legal risk). Using system font stack. -->
+  <!-- FRONTEND ONLY: ndrysho këto pa prek backend -->
+  <link rel="stylesheet" href="/public/css/theme.css"/>
+  <link rel="stylesheet" href="/public/css/base.css"/>
+  <link rel="stylesheet" href="/public/css/components.css"/>
+  <link rel="stylesheet" href="/public/css/pages.css"/>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"MH Montagetechnik",
+    "image":"<%= SITE.siteUrl %>/public/img/hero.jpg",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Hauptstraße 148",
+      "addressLocality":"Sandhausen",
+      "postalCode":"69207",
+      "addressCountry":"DE"
+    },
+    "telephone":"<%= SITE.phone %>",
+    "areaServed":"Heidelberg",
+    "email":"<%= SITE.email %>",
+    "url":"<%= SITE.siteUrl %>"
+  }
+  </script>
+</head>
+<body>

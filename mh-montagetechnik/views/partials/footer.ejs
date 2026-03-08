@@ -1,0 +1,54 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <div class="brand brand--footer">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>MH Montagetechnik</strong>
+          <small><%= SITE.region %></small>
+        </span>
+      </div>
+      <p class="muted">
+        Professionelle Montage von Fenstern, Türen, Rollläden & Sonnenschutzsystemen.
+      </p>
+      <p class="muted small">
+        <strong>Adresse:</strong> Hauptstraße 148, 69207 Sandhausen
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Leistungen</h4>
+      <a href="/fenster-montage-heidelberg">Fenster Montage</a>
+      <a href="/tueren-einbau-heidelberg">Türen Einbau</a>
+      <a href="/rollladen-montage-heidelberg">Rollläden</a>
+      <a href="/jalousien-sonnenschutz-heidelberg">Jalousien</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Kontakt</h4>
+      <a href="tel:<%= SITE.phone.replace(/\s/g,'') %>"><%= SITE.phone %></a>
+      <a href="mailto:<%= SITE.email %>"><%= SITE.email %></a>
+      <span class="muted">Heidelberg & Umgebung</span>
+    </div>
+
+    <div class="footer__col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/admin/login">Admin</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year"></span> MH Montagetechnik. Alle Rechte vorbehalten.</span>
+    <a class="to-top" href="#top">Nach oben ↑</a>
+  </div>
+</footer>
+
+<script>
+  window.SITE_GA_ID = "<%= SITE.gaId %>";
+  window.CSRF_TOKEN = "<%= csrfToken %>";
+</script>
+<script src="/public/js/main.js"></script>
+</body>
+</html>

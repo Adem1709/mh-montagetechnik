@@ -1,0 +1,63 @@
+<% /* HAUSTÜR DESIGNS PAGE
+   Katalog / modele 600–618.
+   Dizajni: pages.css + components.css
+   Filtrat në këtë faqe kontrollohen nga public/js/main.js
+*/ %>
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <h1>Haustür-Designs 600–618</h1>
+        <p class="muted">Designs aus dem Katalog – Produktion: <strong>Niti Windows</strong>, Montage: <strong>MH Montagetechnik</strong>.</p>
+      </div>
+
+      <div class="filters">
+        <button class="btn btn--ghost is-filter-active" data-door-filter="all" type="button">Alle</button>
+        <button class="btn btn--ghost" data-door-filter="RAL 7016" type="button">RAL 7016</button>
+        <button class="btn btn--ghost" data-door-filter="RAL 9010" type="button">RAL 9010</button>
+        <button class="btn btn--ghost" data-door-filter="Black Printed" type="button">Black Printed</button>
+        <button class="btn btn--ghost" data-door-filter="Wood" type="button">Wood</button>
+      </div>
+    </div>
+
+    <div class="grid grid--3 reveal" id="doorDesignGrid">
+      <% designs.forEach((d, idx) => { %>
+        <article class="pcard door-design" data-color="<%= d.color %>" data-glass="<%= d.glass %>">
+          <img src="/public/img/g<%= (idx % 6) + 1 %>.jpg" alt="<%= d.title %>" loading="lazy">
+          <div class="pmeta">
+            <div class="tag"><%= d.number %></div>
+            <h3><%= d.title %></h3>
+            <p class="muted"><%= d.color %></p>
+
+            <div class="kv">
+              <div class="row"><span>Glas</span><b><%= d.glass %></b></div>
+              <div class="row"><span>System</span><b><%= d.system %></b></div>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+              <a class="btn btn--primary" href="/kontakt#angebot" data-prefill-product="<%= d.title %>">Angebot</a>
+              <a class="btn btn--ghost" href="/public/docs/katalog-tueren.pdf" target="_blank" rel="noopener">PDF</a>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+
+    <div class="cta" style="margin-top:24px;">
+      <div>
+        <h2>Heroal D 92 UD & D 72</h2>
+        <p class="muted">Wählen Sie ein Design und fragen Sie direkt mit Referenznummer an.</p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="/produkte">Zurück zu Produkte</a>
+        <a class="btn btn--ghost" href="/kontakt#angebot">Beratung anfragen</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

@@ -1,0 +1,59 @@
+<% /* PRODUKT DETAIL PAGE
+   Specs + galeri vizuale. Stilin e ndërron te CSS files.
+*/ %>
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="section__head">
+      <h1><%= product.title %></h1>
+      <p class="muted"><span class="tag"><%= product.category %></span> &nbsp; <%= product.short_desc || "" %></p>
+    </div>
+
+    <div class="grid grid--2 reveal">
+      <div class="card">
+        <img style="border-radius:18px;border:1px solid var(--line)" src="<%= product.cover_image_path || '/public/img/products.jpg' %>" alt="<%= product.title %>">
+        <% if (images && images.length) { %>
+          <div class="grid grid--3" style="margin-top:12px;">
+            <% images.forEach(i => { %>
+              <a class="gcard lightbox" href="<%= i.image_path %>">
+                <img src="<%= i.image_path %>" alt="" loading="lazy">
+                <div class="gcap"><div class="muted small">Foto öffnen</div></div>
+              </a>
+            <% }) %>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="card">
+        <h2>Eigenschaften</h2>
+        <% if (!specs || specs.length === 0) { %>
+          <p class="muted">Keine Daten – bitte im Admin ergänzen.</p>
+        <% } else { %>
+          <div class="kv">
+            <% specs.forEach(s => { %>
+              <div class="row"><span><%= s.label %></span><b><%= s.value %></b></div>
+            <% }) %>
+          </div>
+        <% } %>
+
+        <% if (product.long_desc) { %>
+          <h3 style="margin-top:16px;">Beschreibung</h3>
+          <p class="muted"><%= product.long_desc %></p>
+        <% } %>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+          <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+          <% if (product.pdf_path) { %>
+            <a class="btn btn--ghost" href="<%= product.pdf_path %>" target="_blank" rel="noopener">PDF Katalog</a>
+          <% } %>
+          <a class="btn btn--ghost" href="/produkte">Zurück</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

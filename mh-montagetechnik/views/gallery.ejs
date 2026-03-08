@@ -1,0 +1,45 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <h1>Galerie</h1>
+        <p class="muted">Referenzen: Fenster, Türen, Rollläden, Jalousien.</p>
+      </div>
+
+      <form class="filters" method="GET" action="/galerie">
+        <select name="category" aria-label="Kategorie">
+          <option value="">Alle</option>
+          <option value="Fenster" <%= category==="Fenster"?"selected":"" %>>Fenster</option>
+          <option value="Türen" <%= category==="Türen"?"selected":"" %>>Türen</option>
+          <option value="Rollläden" <%= category==="Rollläden"?"selected":"" %>>Rollläden</option>
+          <option value="Jalousien" <%= category==="Jalousien"?"selected":"" %>>Jalousien</option>
+          <option value="Pergola" <%= category==="Pergola"?"selected":"" %>>Pergola</option>
+        </select>
+        <button class="btn btn--primary" type="submit">Filtern</button>
+      </form>
+    </div>
+
+    <div class="grid grid--3 reveal">
+      <% if (!projects || projects.length === 0) { %>
+        <div class="card"><p class="muted">Keine Projekte gefunden.</p></div>
+      <% } %>
+
+      <% (projects || []).forEach(p => { %>
+        <a class="gcard" href="/projekt/<%= p.id %>">
+          <img src="<%= p.cover_image_path || p.first_image || '/public/img/g1.jpg' %>" alt="<%= p.title %>" loading="lazy">
+          <div class="gcap">
+            <div class="tag"><%= p.category %></div>
+            <div class="cap-title"><%= p.title %></div>
+            <div class="cap-sub muted"><%= p.description || '' %></div>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

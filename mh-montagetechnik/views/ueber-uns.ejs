@@ -1,0 +1,51 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="service-hero reveal">
+      <div>
+        <h1>Über uns</h1>
+        <p class="muted">
+          <strong>MH Montagetechnik</strong> steht für fachgerechte Montage, saubere Ausführung und zuverlässigen Service.
+          Als Familienbetrieb arbeiten wir in enger Kooperation mit <strong>Niti Windows</strong> – Produktion & Montage aus einer Hand.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/produkte">Produkte ansehen</a>
+          <a class="btn btn--ghost" href="/kontakt#angebot">Angebot anfordern</a>
+        </div>
+
+        <div class="grid grid--3" style="margin-top:14px;">
+          <div class="card"><h3>Aufmaß</h3><p class="muted">Vor Ort, präzise & schnell – Heidelberg & Umgebung.</p></div>
+          <div class="card"><h3>Montage</h3><p class="muted">Fenster, Türen, Rollläden – sauber, sicher, langlebig.</p></div>
+          <div class="card"><h3>Service</h3><p class="muted">Nachrüstung, Reparatur, Wartung – wenn Sie uns brauchen.</p></div>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <img src="/public/img/logo-mh.jpg" alt="MH Logo" loading="lazy">
+        <div class="media-card__badge">Familienbetrieb</div>
+      </div>
+    </div>
+
+    <div class="grid grid--2 reveal" style="margin-top:18px;">
+      <div class="card">
+        <h2>Kooperation mit Niti Windows</h2>
+        <p class="muted">Produktion von Qualitäts-Systemen – kombiniert mit unserer Montage-Kompetenz.</p>
+        <a class="btn btn--ghost" href="https://nitiwindows.com" target="_blank" rel="noopener">Niti Windows besuchen</a>
+      </div>
+      <div class="card">
+        <h2>Kataloge</h2>
+        <p class="muted">Downloads (optional):</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn--ghost" href="/public/docs/katalog-tueren.pdf" target="_blank" rel="noopener">Tür-Katalog (PDF)</a>
+          <a class="btn btn--ghost" href="/public/docs/katalog-mh.pdf" target="_blank" rel="noopener">MH PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

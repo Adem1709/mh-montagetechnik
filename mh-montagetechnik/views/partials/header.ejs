@@ -1,0 +1,48 @@
+<% /* HEADER
+   Navbar premium.
+   Ndrysho logo / menu / CTA këtu.
+*/ %>
+<header class="header" id="top">
+    <div class="navbar-shell">
+      <a class="brand brand--image" href="/">
+        <img class="brand__logo" src="/public/img/logo-mh.png" alt="MH Fenster Montagetechnik" />
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="<%= path==='/'?'is-active':'' %>" href="/">Start</a>
+        <a class="<%= path.startsWith('/produkte')?'is-active':'' %>" href="/produkte">Produkte</a>
+        <a class="<%= path.startsWith('/fenster')?'is-active':'' %>" href="/fenster-montage-heidelberg">Montage</a>
+        <a class="<%= path==='/galerie'?'is-active':'' %>" href="/galerie">Projekte</a>
+        <a class="<%= path==='/ueber-uns'?'is-active':'' %>" href="/ueber-uns">Über uns</a>
+        <a class="<%= path==='/kontakt'?'is-active':'' %>" href="/kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header__cta">
+  <a class="phone phone--header" href="tel:<%= SITE.phone.replace(/\s/g,'') %>">
+    <span class="phone__icon">📞</span>
+    <span class="phone__text"><%= SITE.phone %></span>
+  </a>
+
+  <a class="btn btn--primary nav-cta" href="/kontakt#angebot">
+    Angebot anfordern
+  </a>
+
+  <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+    </div>
+
+  <div class="mobile" id="mobileMenu">
+    <div class="container mobile__inner">
+      <a href="/">Start</a>
+      <a href="/produkte">Produkte</a>
+      <a href="/fenster-montage-heidelberg">Montage</a>
+      <a href="/galerie">Projekte</a>
+      <a href="/ueber-uns">Über uns</a>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/kontakt#angebot">Angebot anfordern</a>
+      <% /* call button removed */ %>
+    </div>
+  </div>
+</header>

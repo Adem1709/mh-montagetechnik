@@ -1,0 +1,12 @@
+# Node dependencies
+mh-montagetechnik/node_modules/
+
+# Environment secrets
+mh-montagetechnik/.env
+
+# Runtime uploads
+mh-montagetechnik/public/uploads/
+
+# OS/editor
+.DS_Store
+Thumbs.db

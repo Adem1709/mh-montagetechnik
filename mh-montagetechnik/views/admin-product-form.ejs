@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title><%= mode === 'create' ? 'Neues Produkt' : 'Produkt bearbeiten' %> | Admin</title>
+  <link rel="stylesheet" href="/public/css/styles.css"/>
+</head>
+<body>
+  <main class="container admin">
+    <h1><%= mode === 'create' ? 'Neues Produkt' : 'Produkt bearbeiten' %></h1>
+
+    <form class="form" method="POST" enctype="multipart/form-data"
+      action="<%= mode==='create' ? '/admin/products/new' : ('/admin/products/' + product.id + '/edit') %>">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+
+      <div class="form__row">
+        <label>Titel
+          <input name="title" required value="<%= product.title %>" />
+        </label>
+
+        <label>Kategorie
+          <select name="category" required>
+            <% const cats = ["Haustüren","Fenster","Rollläden","Jalousien"]; %>
+            <% cats.forEach(c => { %>
+              <option value="<%= c %>" <%= product.category===c ? "selected":"" %>><%= c %></option>
+            <% }) %>
+          </select>
+        </label>
+      </div>
+
+      <label>Kurzbeschreibung
+        <input name="short_desc" value="<%= product.short_desc || '' %>" />
+      </label>
+
+      <label>Beschreibung
+        <textarea name="long_desc" rows="5"><%= product.long_desc || "" %></textarea>
+      </label>
+
+      <div class="form__row">
+        <label>PDF (optional)
+          <input type="file" name="pdf" accept="application/pdf" />
+        </label>
+
+        <label>Bilder (mehrere möglich)
+          <input type="file" name="images" accept="image/png,image/jpeg,image/webp" multiple />
+        </label>
+      </div>
+
+      <label>Specs (Eigenschaften) – Format: <span class="muted">Label: Wert</span></label>
+      <textarea name="specs" rows="6" placeholder="Bautiefe: 92 mm&#10;Einbruchhemmung: bis RC3"><%= specsText || "" %></textarea>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn btn--primary" type="submit">Speichern</button>
+        <a class="btn btn--ghost" href="/admin/products">Zurück</a>
+      </div>
+    </form>
+
+    <% if (mode === "edit") { %>
+      <div class="card" style="margin-top:14px;">
+        <h2>Bilder</h2>
+        <div class="img-grid">
+          <% (images || []).forEach(img => { %>
+            <div class="img-tile">
+              <img src="<%= img.image_path %>" alt="">
+              <div class="img-actions">
+                <form method="POST" action="/admin/products/<%= product.id %>/images/<%= img.id %>/delete">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+                  <button class="btn btn--ghost" type="submit" onclick="return confirm('Delete image?')">Delete</button>
+                </form>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

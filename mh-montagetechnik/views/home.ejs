@@ -1,0 +1,275 @@
+<% /* HOME PAGE
+   Dizajni: pages.css
+   Cards/buttons/header: components.css
+   Ngjyrat globale: theme.css
+   Backend: mos e prek për dizajn.
+*/ %>
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+<%- include("partials/welcome-popup") %>
+
+<main>
+  <% /* HERO SECTION
+   Ndrysho tekstin/foton këtu.
+   Dizajni kontrollohet nga public/css/pages.css
+*/ %>
+<section class="hero hero--premium">
+  
+
+    <div class="hero__content-grid">
+      <div class="hero__copy">
+        <span class="hero__badge">Fachbetrieb für Fenster & Türen</span>
+
+        <h1>
+          Fenster-, Türen- &<br>
+          Rollladenmontage<br>
+          
+        </h1>
+
+        <p class="hero__lead">
+          Präzise Montage. Hochwertige Systeme und saubere Ausführung.
+        </p>
+
+        <p class="hero__sublead">
+          Ihr zuverlässiger Partner für moderne Fenster, Haustüren und Rollläden
+          in Heidelberg und Umgebung.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+          <a class="btn btn--ghost hero__ghost-light" href="/galerie">Projekte ansehen</a>
+        </div>
+
+        <div class="hero__points">
+          <div>✓ Schnelle Termine</div>
+          <div>✓ Saubere Montage</div>
+          <div>✓ Qualität vom Fachbetrieb</div>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="/public/img/hero-window.jpg" alt="Fenstermontage in Heidelberg">
+      </div>
+    </div>
+
+
+</section>
+
+      <!--
+      <div class="hero__image">
+        <img src="/public/img/hero.jpg" alt="Montage bei Fenster/Türen" loading="eager" />
+      </div>
+      -->
+    </div>
+  </section>
+
+  <section class="section" id="leistungen">
+    <div class="container">
+      <div class="section__head">
+        <h2>Unsere Leistungen</h2>
+        <p>Montage, Austausch und Nachrüstung – schnell, sauber und zuverlässig.</p>
+      </div>
+
+      <div class="grid grid--4 reveal">
+        <article class="card">
+          <div class="card__icon">🪟</div>
+          <h3>Fenster (PVC/Alu)</h3>
+          <p>Energiesparfenster inkl. fachgerechter Installation.</p>
+          <a class="link" href="/fenster-montage-heidelberg">Mehr →</a>
+        </article>
+        <article class="card">
+          <div class="card__icon">🚪</div>
+          <h3>Türen</h3>
+          <p>Haustüren & Innentüren – sicher, dicht, langlebig.</p>
+          <a class="link" href="/tueren-einbau-heidelberg">Mehr →</a>
+        </article>
+        <article class="card">
+          <div class="card__icon">🛡</div>
+          <h3>Rollläden</h3>
+          <p>Wärme-, Sicht- und Einbruchschutz – auch Motorisierung.</p>
+          <a class="link" href="/rollladen-montage-heidelberg">Mehr →</a>
+        </article>
+        <article class="card">
+          <div class="card__icon">🌤</div>
+          <h3>Jalousien</h3>
+          <p>Maßgeschneiderter Sicht- und Sonnenschutz.</p>
+          <a class="link" href="/jalousien-sonnenschutz-heidelberg">Mehr →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="interaktiv">
+    <div class="container">
+      <div class="section__head">
+        <h2>Interaktive Produkte</h2>
+        <p class="muted">Tippen/Klicken: Fenster öffnen, Tür auf, Rollladen runter.</p>
+      </div>
+
+      <div class="grid grid--3 reveal">
+        <article class="demo-card">
+          <header class="demo-card__head">
+            <h3>Fenster</h3><span class="tag">Öffnen / Schließen</span>
+          </header>
+          <div class="demo demo--window js-toggle" role="button" tabindex="0" aria-label="Fenster öffnen oder schließen">
+            <div class="w-frame">
+              <div class="w-glass"></div>
+              <div class="w-sash"></div>
+              <div class="w-handle"></div>
+            </div>
+          </div>
+          <div class="demo-card__actions">
+            <button class="btn btn--ghost js-demo-btn" data-target="window">Toggle</button>
+          </div>
+        </article>
+
+        <article class="demo-card">
+          <header class="demo-card__head">
+            <h3>Tür</h3><span class="tag">Auf / Zu</span>
+          </header>
+          <div class="demo demo--door js-toggle" role="button" tabindex="0" aria-label="Tür öffnen oder schließen">
+            <div class="d-frame">
+              <div class="d-door"></div>
+              <div class="d-knob"></div>
+            </div>
+          </div>
+          <div class="demo-card__actions">
+            <button class="btn btn--ghost js-demo-btn" data-target="door">Toggle</button>
+          </div>
+        </article>
+
+        <article class="demo-card">
+          <header class="demo-card__head">
+            <h3>Rollladen</h3><span class="tag">Hoch / Runter</span>
+          </header>
+          <div class="demo demo--shutter js-toggle" role="button" tabindex="0" aria-label="Rollladen hoch oder runter">
+            <div class="s-frame">
+              <div class="s-glass"></div>
+              <div class="s-slats"></div>
+              <div class="s-box"></div>
+            </div>
+          </div>
+          <div class="demo-card__actions">
+            <button class="btn btn--ghost js-demo-btn" data-target="shutter">Toggle</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section" id="co-brand">
+  <div class="container">
+    <div class="section__head">
+      <h2>Produktion & Montage aus einer Hand</h2>
+      <p class="muted">Niti Windows produziert – MH Montagetechnik montiert. Ein Ansprechpartner, klare Qualität.</p>
+    </div>
+
+    <div class="grid grid--2 reveal">
+      <article class="card">
+        <div class="tag">Niti Windows</div>
+        <h3>Produktion</h3>
+        <p class="muted">Fenster, Türen und Systeme – modern gefertigt und auf Qualität ausgelegt.</p>
+        <a class="btn btn--ghost" href="https://nitiwindows.com" target="_blank" rel="noopener">Mehr über Niti</a>
+      </article>
+      <article class="card">
+        <div class="tag">MH Montagetechnik</div>
+        <h3>Aufmaß • Montage • Service</h3>
+        <p class="muted">Fachgerechte Montage, saubere Übergabe und zuverlässiger Service in Heidelberg & Umgebung.</p>
+        <a class="btn btn--primary" href="/produkte">Produkte entdecken</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="warum">
+    <div class="container">
+      <div class="section__head">
+        <h2>Warum MH Montagetechnik?</h2>
+        <p>Verlässliche Arbeit, klare Kommunikation und saubere Übergabe.</p>
+      </div>
+
+      <div class="grid grid--3 reveal">
+        <article class="feature"><div class="feature__icon">👷</div><h3>Fachgerechte Montage</h3><p>Präzise Ausführung nach aktuellem Standard.</p></article>
+        <article class="feature"><div class="feature__icon">⏱</div><h3>Termintreue</h3><p>Planung, Abstimmung und pünktliche Umsetzung.</p></article>
+        <article class="feature"><div class="feature__icon">🧼</div><h3>Sauberkeit</h3><p>Schutzmaßnahmen & Ordnung – minimaler Staub.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--muted" id="neu">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <div>
+          <h2>Neueste Projekte</h2>
+          <p>Aktuelle Arbeiten aus Heidelberg & Umgebung.</p>
+        </div>
+        <a class="btn btn--ghost" href="/galerie">Alle Projekte</a>
+      </div>
+
+      <div class="grid grid--3 reveal">
+        <% if (!projects || projects.length === 0) { %>
+          <div class="card"><p class="muted">Noch keine Projekte – bitte im Admin Panel hinzufügen.</p></div>
+        <% } %>
+
+        <% (projects || []).forEach(p => { %>
+          <a class="gcard" href="/projekt/<%= p.id %>">
+            <img src="<%= p.cover_image_path || p.first_image || '/public/img/g1.jpg' %>" alt="<%= p.title %>" loading="lazy">
+            <div class="gcap">
+              <div class="tag"><%= p.category %></div>
+              <div class="cap-title"><%= p.title %></div>
+              <div class="cap-sub muted"><%= p.description || '' %></div>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section section--muted" id="katalog">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <h2>Katalog & Designs</h2>
+        <p class="muted">Von Systemen bis zu konkreten Design-Modellen – direkt online ansehen.</p>
+      </div>
+      <a class="btn btn--ghost" href="/produkte">Alle Produkte</a>
+    </div>
+
+    <div class="grid grid--3 reveal">
+      <a class="card" href="/produktkatalog/1" style="text-decoration:none;">
+        <div class="tag">System</div>
+        <h3>Heroal D 92 UD</h3>
+        <p class="muted">Premium Haustür-System mit starker Wärmedämmung und Sicherheit.</p>
+      </a>
+      <a class="card" href="/produktkatalog/2" style="text-decoration:none;">
+        <div class="tag">System</div>
+        <h3>Heroal D 72</h3>
+        <p class="muted">Flexibles Türsystem mit reversibler Füllungsbefestigung.</p>
+      </a>
+      <a class="card" href="/haustueren-designs" style="text-decoration:none;">
+        <div class="tag">Designs</div>
+        <h3>Modelle 600–618</h3>
+        <p class="muted">Designkarten mit RAL-Farben und Glastypen direkt filterbar.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="cta">
+    <div class="container cta reveal">
+      <div>
+        <h2>Kostenlose Beratung & Aufmaß</h2>
+        <p class="muted">Schreiben Sie uns. Wir melden uns schnellstmöglich zurück.</p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+        <a class="btn btn--ghost" href="tel:<%= SITE.phone.replace(/\s/g,'') %>">Jetzt anrufen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

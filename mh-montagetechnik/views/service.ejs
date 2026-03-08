@@ -1,0 +1,45 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="service-hero reveal">
+      <div>
+        <h1><%= s.h1 %></h1>
+        <p class="muted"><%= s.intro %></p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+          <a class="btn btn--ghost" href="/galerie">Referenzen ansehen</a>
+        </div>
+      </div>
+      <div class="media-card">
+        <img src="/public/img/products.jpg" alt="Service Bild" loading="lazy">
+        <div class="media-card__badge">Heidelberg & Umgebung</div>
+      </div>
+    </div>
+
+    <div class="grid grid--2 reveal" style="margin-top:18px;">
+      <div class="card">
+        <h2>Leistungsumfang</h2>
+        <ul class="list">
+          <% s.bullets.forEach(b => { %>
+            <li>✅ <%= b %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Ablauf</h2>
+        <ol class="list">
+          <li>Kontakt & Beratung</li>
+          <li>Aufmaß vor Ort</li>
+          <li>Unverbindliches Angebot</li>
+          <li>Montage & Übergabe</li>
+        </ol>
+        <p class="muted small">Tipp: Für schnellere Angebote: Maße + Adresse + Produktwunsch senden.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

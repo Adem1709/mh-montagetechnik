@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin | MH Montagetechnik</title>
+  <link rel="stylesheet" href="/public/css/styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <span class="brand__mark"></span>
+        <span class="brand__text"><strong>Admin</strong><small><%= username %></small></span>
+      </div>
+      <div class="header__cta">
+        <a class="btn btn--ghost" href="/">Website</a>
+        <a class="btn btn--primary" href="/admin/projects/new">+ Neues Projekt</a>
+        <a class="btn btn--ghost" href="/admin/products">Produkte</a>
+        <a class="btn btn--ghost" href="/admin/users/new">+ User</a>
+        <form method="POST" action="/admin/logout">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+          <button class="btn btn--ghost" type="submit">Logout</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Projekte</h1>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Bild</th>
+              <th>Titel</th>
+              <th>Kategorie</th>
+              <th>Bilder</th>
+              <th>Updated</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (!projects || projects.length === 0) { %>
+              <tr><td colspan="6" class="muted">Keine Projekte vorhanden.</td></tr>
+            <% } %>
+
+            <% (projects || []).forEach(p => { %>
+              <tr>
+                <td>
+                  <img class="thumb" src="<%= p.cover_image_path || p.first_image || '/public/img/g1.jpg' %>" alt="">
+                </td>
+                <td>
+                  <strong><%= p.title %></strong>
+                  <div class="muted small"><%= p.description || '' %></div>
+                </td>
+                <td><span class="tag"><%= p.category %></span></td>
+                <td class="muted small"><%= p.image_count %></td>
+                <td class="muted small"><%= p.updated_at %></td>
+                <td class="actions-td">
+                  <a class="btn btn--ghost" href="/admin/projects/<%= p.id %>/edit">Edit</a>
+                  <form method="POST" action="/admin/projects/<%= p.id %>/delete">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+                    <button class="btn btn--ghost" type="submit" onclick="return confirm('Delete this project?')">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

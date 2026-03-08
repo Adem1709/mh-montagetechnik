@@ -1,0 +1,33 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="section__head">
+      <h1><%= project.title %></h1>
+      <p class="muted"><span class="tag"><%= project.category %></span> &nbsp; <%= project.description || '' %></p>
+    </div>
+
+    <div class="grid grid--3 reveal">
+      <% (images || []).forEach(img => { %>
+        <a class="gcard lightbox" href="<%= img.image_path %>">
+          <img src="<%= img.image_path %>" alt="" loading="lazy">
+          <div class="gcap">
+            <div class="muted small">Foto öffnen</div>
+          </div>
+        </a>
+      <% }) %>
+      <% if (!images || images.length === 0) { %>
+        <div class="card"><p class="muted">Keine Bilder vorhanden.</p></div>
+      <% } %>
+    </div>
+
+    <div class="center" style="margin-top:16px;">
+      <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+      <a class="btn btn--ghost" href="/galerie">Zurück zur Galerie</a>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>

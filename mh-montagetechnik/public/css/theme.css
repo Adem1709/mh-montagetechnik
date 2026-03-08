@@ -1,0 +1,38 @@
+/* THEME.CSS — ndrysho ngjyrat/radius/font vetëm këtu */
+:root {
+  /* Background Colors */
+  --bg: #0d1117;
+  --bg-soft: #131a22;
+  --panel: #171f29;
+  --surface: #ffffff;
+
+  /* Text Colors */
+  --text: #0f172a;
+  --text-on-dark: #e5edf7;
+  --sub: #5b697c;
+  --sub-on-dark: rgba(229, 237, 247, .76);
+
+  /* Brand Colors */
+  --primary: #2b63d9;
+  --secondary: #b08968;
+
+  /* Border/Line Colors */
+  --line: rgba(15, 23, 42, .12);
+  --line-dark: rgba(255, 255, 255, .10);
+
+  /* Border Radius */
+  --r-sm: 14px;
+  --r-md: 18px;
+  --r-lg: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 10px 24px rgba(2, 6, 23, .08);
+  --shadow: 0 18px 50px rgba(2, 6, 23, .14);
+  --shadow-xl: 0 28px 80px rgba(2, 6, 23, .24);
+
+  /* Layout */
+  --container: 1400px;
+
+  /* Typography */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+}

@@ -1,0 +1,60 @@
+<% /* PRODUKTE PAGE
+   Kartat dhe layout ndryshohen te pages.css + components.css
+*/ %>
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <h1>Produkte</h1>
+        <p class="muted">Produktion: <strong>Niti Windows</strong> – Montage: <strong>MH Montagetechnik</strong>. Aus einer Hand.</p>
+      </div>
+      <form class="filters" method="GET" action="/produkte">
+        <select name="category" aria-label="Kategorie">
+          <option value="">Alle Kategorien</option>
+          <% ["Haustüren","Fenster","Rollläden","Jalousien"].forEach(c => { %>
+            <option value="<%= c %>" <%= category===c ? "selected":"" %>><%= c %></option>
+          <% }) %>
+        </select>
+        <button class="btn btn--primary" type="submit">Filtern</button>
+      </form>
+    </div>
+
+    
+<div class="grid grid--2" style="margin-bottom:18px;">
+  <a class="card" href="/haustueren-designs" style="text-decoration:none;">
+    <div class="tag">Katalog</div>
+    <h3>Haustür-Designs 600–618</h3>
+    <p class="muted">Designkarten aus dem PDF-Katalog – schnell filterbar nach Farbe/Glas.</p>
+  </a>
+
+  <a class="card" href="/public/docs/katalog-tueren.pdf" target="_blank" rel="noopener" style="text-decoration:none;">
+    <div class="tag">PDF</div>
+    <h3>Tür-Katalog herunterladen</h3>
+    <p class="muted">Originaler Katalog als PDF – ideal für Beratung und Angebotsanfrage.</p>
+  </a>
+</div>
+
+    <div class="grid grid--3 reveal">
+      <% if (!products || products.length === 0) { %>
+        <div class="card"><p class="muted">Noch keine Produkte – bitte im Admin Panel hinzufügen.</p></div>
+      <% } %>
+
+      <% (products || []).forEach(p => { %>
+        <a class="pcard" href="/produktkatalog/<%= p.id %>">
+          <img src="<%= p.cover_image_path || '/public/img/products.jpg' %>" alt="<%= p.title %>" loading="lazy">
+          <div class="pmeta">
+            <div class="tag"><%= p.category %></div>
+            <h3><%= p.title %></h3>
+            <p class="muted"><%= p.short_desc || "" %></p>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/cookie-banner") %>
+<%- include("partials/footer") %>
