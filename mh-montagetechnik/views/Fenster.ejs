@@ -1,0 +1,379 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <h1>Fenster</h1>
+      <p class="muted">
+        Moderne Fensterlösungen mit professioneller Montage, hochwertiger Verarbeitung
+        und sauberer Ausführung.
+      </p>
+    </div>
+
+    <section class="category-hero reveal">
+      <div class="category-hero__media">
+        <img src="/public/img/services/fenster.jpg" alt="Fenster Systeme">
+      </div>
+
+      <div class="category-hero__content">
+        <span class="tag">Fenster Systeme</span>
+        <h2>PVC, Aluminium und moderne Öffnungssysteme</h2>
+        <p>
+          Wir bieten hochwertige Fensterlösungen für Neubau, Sanierung und Modernisierung –
+          präzise montiert und optisch sauber integriert.
+        </p>
+
+        <div class="hero-card__checks">
+          <div>✓ Energieeffiziente Systeme</div>
+          <div>✓ Saubere Montage</div>
+          <div>✓ Modernes Design</div>
+        </div>
+
+        <div class="hero-card__actions" style="margin-top:18px;">
+          <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+          <a class="btn btn--ghost" href="/galerie">Projekte ansehen</a>
+        </div>
+      </div>
+    </section>
+<section class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <h2>Fensterarten</h2>
+      <p class="muted">
+        Wählen Sie eine Fensterart und entdecken Sie verfügbare Materialien, Farben und Kataloge.
+      </p>
+    </div>
+
+    <div class="fenster-tabs-showcase reveal">
+
+      <div class="fenster-tabs" role="tablist" aria-label="Fensterarten">
+        <button class="fenster-tab is-active"
+          type="button"
+          data-tab="fest"
+          data-title="Festverglasung"
+          data-description="Großzügige Lichtflächen mit moderner Optik und sehr guter Wärmedämmung. Ideal für klare Fassadenlinien und moderne Architektur."
+          data-image="/public/img/windows/festverglasung.jpg"
+          data-kunststoff="Salamander|Inoutic|Aluplast | Weitere Marken auf Anfrage"
+          data-aluminium="Alumil | Feal | Weitere Marken auf Anfrage"
+          data-colors="Weiß|Anthrazit|Golden Oak|Nussbaum|Sonderfarben auf Anfrage"
+          data-catalogs="Salamander Katalog|/public/pdfs/windows/salamander.pdf;Inoutic Katalog|/public/pdfs/windows/inoutic.pdf;Aluplast Katalog|/public/pdfs/windows/aluplast.pdf;Alumil Katalog|/public/pdfs/windows/alumil.pdf">
+          Festverglasung
+        </button>
+
+        <button class="fenster-tab"
+          type="button"
+          data-tab="dreh"
+          data-title="Dreh- & Drehkippfenster"
+          data-description="Die klassische und vielseitige Fensterlösung für Alltag, Komfort und kontrollierte Lüftung – modern, funktional und langlebig."
+          data-image="/public/img/windows/dreh-kipp.jpg"
+          data-kunststoff="Salamander|Inoutic|Aluplast | Weitere Marken auf Anfrage"
+          data-aluminium="Alumil | Feal | Weitere Marken auf Anfrage"
+          data-colors="Weiß|Anthrazit|Golden Oak|Nussbaum|Sonderfarben auf Anfrage"
+          data-catalogs="Salamander Katalog|/public/pdfs/windows/salamander.pdf;Inoutic Katalog|/public/pdfs/windows/inoutic.pdf;Aluplast Katalog|/public/pdfs/windows/aluplast.pdf;Alumil Katalog|/public/pdfs/windows/alumil.pdf">
+          Dreh- & Drehkippfenster
+        </button>
+
+       <button class="fenster-tab"
+  type="button"
+  data-tab="schiebe"
+  data-title="Schiebeelemente"
+  data-description="Moderne Schiebesysteme für große Öffnungen, mehr Tageslicht und einen eleganten Übergang zwischen innen und außen."
+  data-image="/public/img/windows/schiebe-psk.jpg"
+  data-subtypes="Parallel-Schiebe-Kipptür|Hebe-Schiebetür|Falt-Schiebetür"
+  data-kunststoff="Salamander|Inoutic|Aluplast | Weitere Marken auf Anfrage"
+  data-aluminium="Alumil | Feal | Weitere Marken auf Anfrage"
+  data-colors="Weiß|Anthrazit|Weiß innen / Anthrazit außen|Weitere Farben und Dekore auf Anfrage"
+  data-catalogs="Salamander Katalog|/public/pdfs/windows/salamander.pdf;Inoutic Katalog|/public/pdfs/windows/inoutic.pdf;Aluplast Katalog|/public/pdfs/windows/aluplast.pdf;Alumil Katalog|/public/pdfs/windows/alumil.pdf">
+  Schiebeelemente
+</button>
+      </div>
+
+      <div class="fenster-stage" id="fensterStage">
+        <div class="fenster-stage__image-wrap">
+          <img id="fensterImage" class="is-visible" src="/public/img/windows/festverglasung.jpg" alt="Fensterart">
+        </div>
+
+        <div class="fenster-stage__overlay is-visible" id="fensterOverlay">
+          <h3 id="fensterTitle">Festverglasung</h3>
+          <p id="fensterDescription">
+            Großzügige Lichtflächen mit moderner Optik und sehr guter Wärmedämmung. Ideal für klare Fassadenlinien und moderne Architektur.
+          </p>
+
+          
+          <div class="schiebe-subslider" id="schiebeSubslider">
+  <button class="schiebe-subtab is-active"
+    type="button"
+    data-image="/public/img/windows/schiebe-psk.jpg"
+    data-title="Parallel-Schiebe-Kipptür"
+    data-description="Praktische Schiebelösung mit Kippfunktion, platzsparender Bedienung und modernem Komfort für den Alltag.">
+    Parallel-Schiebe-Kipptür
+  </button>
+
+  <button class="schiebe-subtab"
+    type="button"
+    data-image="/public/img/windows/schiebe-hebe.jpg"
+    data-title="Hebe-Schiebetür"
+    data-description="Große Öffnungen, elegante Linien und komfortable Bedienung für moderne Wohnkonzepte mit viel Tageslicht.">
+    Hebe-Schiebetür
+  </button>
+
+  <button class="schiebe-subtab"
+    type="button"
+    data-image="/public/img/windows/schiebe-falt.jpg"
+    data-title="Falt-Schiebetür"
+    data-description="Flexible Öffnungslösung mit großzügiger Öffnungsbreite und modernem Übergang zwischen innen und außen.">
+    Falt-Schiebetür
+  </button>
+</div>
+        </div>
+      </div>
+
+      <div class="fenster-info-grid" id="fensterInfoGrid">
+
+        <article class="fenster-info-card fenster-info-card--materials">
+          <h4>Verfügbar in</h4>
+
+          <div class="fenster-material-block">
+            <strong>Kunststoff</strong>
+            <ul id="kunststoffList">
+              <li>Salamander</li>
+              <li>Inoutic</li>
+              <li>Weitere Marken auf Anfrage</li>
+            </ul>
+          </div>
+
+          <div class="fenster-material-block">
+            <strong>Aluminium</strong>
+            <ul id="aluminiumList">
+              <li>Alumil</li>
+              <li>Feal</li>
+              <li>Weitere Marken auf Anfrage</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="fenster-info-card">
+          <h4>Farben</h4>
+          <div class="fenster-color-list" id="farbenList">
+  <span class="fenster-color-chip"><i class="color-dot color-dot--white"></i>Weiß</span>
+  <span class="fenster-color-chip"><i class="color-dot color-dot--anthrazit"></i>Anthrazit</span>
+  <span class="fenster-color-chip"><i class="color-dot color-dot--mix"></i>Weiß Anthrazit</span>
+  <span class="fenster-color-note">Weitere Farben und Dekore auf Anfrage verfügbar.</span>
+</div>
+        </article>
+
+        <article class="fenster-info-card">
+          <h4>Kataloge</h4>
+          <div class="fenster-catalog-list" id="katalogList">
+            <a class="fenster-catalog-btn" href="/public/pdfs/windows/salamander.pdf" download>Salamander Katalog</a>
+            <a class="fenster-catalog-btn" href="/public/pdfs/windows/inoutic.pdf" download>Inoutic Katalog</a>
+            <a class="fenster-catalog-btn" href="/public/pdfs/windows/aluplast.pdf" download>Aluplast Katalog</a>
+            <a class="fenster-catalog-btn" href="/public/pdfs/windows/alumil.pdf" download>Alumil Katalog</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const tabs = document.querySelectorAll(".fenster-tab");
+    const stage = document.getElementById("fensterStage");
+    const image = document.getElementById("fensterImage");
+    const overlay = document.getElementById("fensterOverlay");
+    const title = document.getElementById("fensterTitle");
+    const description = document.getElementById("fensterDescription");
+    const infoGrid = document.getElementById("fensterInfoGrid");
+    const kunststoffList = document.getElementById("kunststoffList");
+    const aluminiumList = document.getElementById("aluminiumList");
+    const farbenList = document.getElementById("farbenList");
+    const katalogList = document.getElementById("katalogList");
+    const schiebeSubslider = document.getElementById("schiebeSubslider");
+const schiebeSubtabs = document.querySelectorAll(".schiebe-subtab");
+
+    if (!tabs.length) return;
+
+    let currentIndex = 0;
+    let autoRotate;
+
+    function fillList(target, values) {
+      target.innerHTML = "";
+      values.forEach(value => {
+        if (!value) return;
+        const li = document.createElement("li");
+        li.textContent = value;
+        target.appendChild(li);
+      });
+    }
+
+    function getColorClass(value) {
+      const v = value.toLowerCase();
+
+      if (v.includes("weiß innen") || v.includes("anthrazit außen")) return "color-dot--mix";
+      if (v.includes("weiß")) return "color-dot--white";
+      if (v.includes("anthrazit")) return "color-dot--anthrazit";
+
+      return "color-dot--special";
+    }
+
+    function fillColors(target, values) {
+      target.innerHTML = "";
+
+      values.forEach(value => {
+        if (!value) return;
+
+        const lower = value.toLowerCase();
+
+        if (lower.includes("anfrage") || lower.includes("dekore")) {
+          const note = document.createElement("span");
+          note.className = "fenster-color-note";
+          note.textContent = value;
+          target.appendChild(note);
+          return;
+        }
+
+        const chip = document.createElement("span");
+        chip.className = "fenster-color-chip";
+
+        const dot = document.createElement("i");
+        dot.className = `color-dot ${getColorClass(value)}`;
+
+        const text = document.createElement("span");
+        text.textContent = value;
+
+        chip.appendChild(dot);
+        chip.appendChild(text);
+        target.appendChild(chip);
+      });
+    }
+
+    function fillCatalogs(target, values) {
+      target.innerHTML = "";
+      values.forEach(item => {
+        if (!item) return;
+
+        const parts = item.split("|");
+        const label = parts[0];
+        const href = parts[1];
+
+        if (!label || !href) return;
+
+        const a = document.createElement("a");
+        a.className = "fenster-catalog-btn";
+        a.href = href;
+        a.setAttribute("download", "");
+        a.textContent = label;
+        target.appendChild(a);
+      });
+    }
+
+    
+
+    function animateOut() {
+      stage.classList.add("is-switching");
+      image.classList.remove("is-visible");
+      overlay.classList.remove("is-visible");
+      infoGrid.classList.remove("is-visible");
+    }
+
+    function animateIn() {
+      requestAnimationFrame(() => {
+        image.classList.add("is-visible");
+        overlay.classList.add("is-visible");
+        infoGrid.classList.add("is-visible");
+        stage.classList.remove("is-switching");
+      });
+    }
+
+    function updateTab(tab) {
+      tabs.forEach(btn => btn.classList.remove("is-active"));
+      tab.classList.add("is-active");
+
+      tab.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+
+      const titleValue = tab.dataset.title || "";
+      const descriptionValue = tab.dataset.description || "";
+      const imageValue = tab.dataset.image || "";
+      const kunststoffValue = (tab.dataset.kunststoff || "").split("|");
+      const aluminiumValue = (tab.dataset.aluminium || "").split("|");
+      const farbenValue = (tab.dataset.colors || "").split("|");
+      const katalogValue = (tab.dataset.catalogs || "").split(";");
+      const isSchiebe = tab.dataset.tab === "schiebe";
+
+      animateOut();
+
+      setTimeout(() => {
+        image.src = imageValue;
+        title.textContent = titleValue;
+        description.textContent = descriptionValue;
+
+      
+        fillList(kunststoffList, kunststoffValue);
+        fillList(aluminiumList, aluminiumValue);
+        fillColors(farbenList, farbenValue);
+        fillCatalogs(katalogList, katalogValue);
+        if (isSchiebe) {
+  schiebeSubslider.classList.add("is-visible");
+} else {
+  schiebeSubslider.classList.remove("is-visible");
+}
+
+        animateIn();
+      }, 260);
+    }
+
+    function stopAutoRotate() {
+      if (autoRotate) clearInterval(autoRotate);
+    }
+
+    function startAutoRotate() {
+      stopAutoRotate();
+
+      autoRotate = setInterval(() => {
+        currentIndex = (currentIndex + 1) % tabs.length;
+        updateTab(tabs[currentIndex]);
+      }, 4000);
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        currentIndex = index;
+        updateTab(tab);
+        stopAutoRotate();
+      });
+    });
+    schiebeSubtabs.forEach(subtab => {
+  subtab.addEventListener("click", () => {
+    schiebeSubtabs.forEach(btn => btn.classList.remove("is-active"));
+    subtab.classList.add("is-active");
+
+    animateOut();
+
+    setTimeout(() => {
+      image.src = subtab.dataset.image || image.src;
+      title.textContent = subtab.dataset.title || title.textContent;
+      description.textContent = subtab.dataset.description || description.textContent;
+      animateIn();
+    }, 260);
+  });
+});
+
+    infoGrid.classList.add("is-visible");
+    startAutoRotate();
+  })();
+</script>
+    
+
+  </div>
+</main>
+
+<%- include("partials/footer") %>

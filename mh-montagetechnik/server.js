@@ -49,7 +49,7 @@ app.use((req, res, next) => {
     street: "Hauptstraße 148",
     zipCity: "69207 Sandhausen",
     region: "Heidelberg & Umgebung",
-    phone: process.env.PHONE || "0176 84046502",
+    phone: process.env.PHONE || "176 84046502",
     email: process.env.EMAIL || "info@mh-montagetechnik.de",
     gaId: process.env.GA_MEASUREMENT_ID || "G-XXXXXXX",
     siteUrl: process.env.SITE_URL || "https://mh-montagetechnik.de"
@@ -687,4 +687,65 @@ app.use((err, req, res, next) => {
 // 0.0.0.0 e bën serverin të aksesueshëm nga telefoni në të njëjtin WiFi
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Running: http://localhost:${PORT}`);
+});
+app.get("/fenster", (req, res) => {
+  res.render("fenster", {
+    meta: pageMeta({
+      title: "Fenster | MH Montagetechnik",
+      description: "Moderne Fensterlösungen mit professioneller Montage – PVC, Aluminium und weitere Systeme.",
+      canonical: `${res.locals.SITE.siteUrl}/fenster`
+    })
+  });
+});
+
+/* ========= CATEGORY ROUTES ========= */
+
+app.get("/tueren", (req, res) => {
+  res.render("tueren", {
+    meta: pageMeta({
+      title: "Türen | MH Montagetechnik",
+      description: "Haustüren, Innentüren und moderne Türsysteme mit professioneller Montage.",
+      canonical: `${res.locals.SITE.siteUrl}/tueren`
+    })
+  });
+});
+
+app.get("/rolllaeden", (req, res) => {
+  res.render("rolllaeden", {
+    meta: pageMeta({
+      title: "Rollläden & Jalousien | MH Montagetechnik",
+      description: "Rollläden und Jalousien mit moderner Nachrüstung und professioneller Montage.",
+      canonical: `${res.locals.SITE.siteUrl}/rolllaeden`
+    })
+  });
+});
+
+app.get("/wintergarten", (req, res) => {
+  res.render("wintergarten", {
+    meta: pageMeta({
+      title: "Wintergärten | MH Montagetechnik",
+      description: "Moderne Wintergarten-Lösungen mit hochwertiger Ausführung und sauberer Montage.",
+      canonical: `${res.locals.SITE.siteUrl}/wintergarten`
+    })
+  });
+});
+
+app.get("/gelaender", (req, res) => {
+  res.render("gelaender", {
+    meta: pageMeta({
+      title: "Geländer & Absturzsicherung | MH Montagetechnik",
+      description: "Sichere und elegante Lösungen für Balkon-, Glas- und Fensterbereiche.",
+      canonical: `${res.locals.SITE.siteUrl}/gelaender`
+    })
+  });
+});
+
+app.get("/insektenschutz", (req, res) => {
+  res.render("insektenschutz", {
+    meta: pageMeta({
+      title: "Insektenschutz | MH Montagetechnik",
+      description: "Maßgeschneiderte Insektenschutz-Systeme für Fenster und Türen.",
+      canonical: `${res.locals.SITE.siteUrl}/insektenschutz`
+    })
+  });
 });

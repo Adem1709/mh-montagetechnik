@@ -3,58 +3,71 @@
 */ %>
 <%- include("partials/head") %>
 <%- include("partials/header") %>
-
 <main class="section">
   <div class="container">
-    <div class="section__head section__head--row">
-      <div>
-        <h1>Produkte</h1>
-        <p class="muted">Produktion: <strong>Niti Windows</strong> – Montage: <strong>MH Montagetechnik</strong>. Aus einer Hand.</p>
-      </div>
-      <form class="filters" method="GET" action="/produkte">
-        <select name="category" aria-label="Kategorie">
-          <option value="">Alle Kategorien</option>
-          <% ["Haustüren","Fenster","Rollläden","Jalousien"].forEach(c => { %>
-            <option value="<%= c %>" <%= category===c ? "selected":"" %>><%= c %></option>
-          <% }) %>
-        </select>
-        <button class="btn btn--primary" type="submit">Filtern</button>
-      </form>
+
+    <div class="section__head">
+      <h1>Unsere Leistungen</h1>
+      <p class="muted">
+        Entdecken Sie unsere Produktbereiche – modern, hochwertig und professionell montiert.
+      </p>
     </div>
 
-    
-<div class="grid grid--2" style="margin-bottom:18px;">
-  <a class="card" href="/haustueren-designs" style="text-decoration:none;">
-    <div class="tag">Katalog</div>
-    <h3>Haustür-Designs 600–618</h3>
-    <p class="muted">Designkarten aus dem PDF-Katalog – schnell filterbar nach Farbe/Glas.</p>
-  </a>
+    <div class="services-grid reveal">
 
-  <a class="card" href="/public/docs/katalog-tueren.pdf" target="_blank" rel="noopener" style="text-decoration:none;">
-    <div class="tag">PDF</div>
-    <h3>Tür-Katalog herunterladen</h3>
-    <p class="muted">Originaler Katalog als PDF – ideal für Beratung und Angebotsanfrage.</p>
-  </a>
-</div>
+      <a href="/fenster" class="service-item">
+        <img src="/public/img/services/fenster.jpg" alt="Fenster">
+        <div class="service-content">
+          <h3>Fenster</h3>
+          <p>PVC- und Aluminiumfenster – energieeffizient, modern und hochwertig.</p>
+        </div>
+      </a>
 
-    <div class="grid grid--3 reveal">
-      <% if (!products || products.length === 0) { %>
-        <div class="card"><p class="muted">Noch keine Produkte – bitte im Admin Panel hinzufügen.</p></div>
-      <% } %>
+      <a href="/tueren" class="service-item">
+        <img src="/public/img/services/tueren.jpg" alt="Türen">
+        <div class="service-content">
+          <h3>Türen</h3>
+          <p>Haustüren und Innentüren mit Fokus auf Sicherheit, Design und Langlebigkeit.</p>
+        </div>
+      </a>
 
-      <% (products || []).forEach(p => { %>
-        <a class="pcard" href="/produktkatalog/<%= p.id %>">
-          <img src="<%= p.cover_image_path || '/public/img/products.jpg' %>" alt="<%= p.title %>" loading="lazy">
-          <div class="pmeta">
-            <div class="tag"><%= p.category %></div>
-            <h3><%= p.title %></h3>
-            <p class="muted"><%= p.short_desc || "" %></p>
-          </div>
-        </a>
-      <% }) %>
+      <a href="/rolllaeden" class="service-item">
+        <img src="/public/img/services/rollladen.jpg" alt="Rollläden">
+        <div class="service-content">
+          <h3>Rollläden & Jalousien</h3>
+          <p>Sichtschutz, Wärmeschutz und moderne Nachrüstung.</p>
+        </div>
+      </a>
+
+      <a href="/wintergarten" class="service-item">
+        <img src="/public/img/services/wintergarten.jpg" alt="Wintergärten">
+        <div class="service-content">
+          <h3>Wintergärten</h3>
+          <p>Moderne Lösungen mit viel Licht und hochwertiger Ausführung.</p>
+        </div>
+      </a>
+
+      <a href="/gelaender" class="service-item">
+        <img src="/public/img/services/gelaender.jpg" alt="Geländer">
+        <div class="service-content">
+          <h3>Geländer & Absturzsicherung</h3>
+          <p>Sichere und elegante Lösungen für Glas-, Balkon- und Fensterbereiche.</p>
+        </div>
+      </a>
+
+      <a href="/insektenschutz" class="service-item">
+        <img src="/public/img/services/insektenschutz.jpg" alt="Insektenschutz">
+        <div class="service-content">
+          <h3>Insektenschutz</h3>
+          <p>Passgenaue Systeme für Fenster und Türen – praktisch und langlebig.</p>
+        </div>
+      </a>
+
     </div>
+
   </div>
 </main>
+
 
 <%- include("partials/cookie-banner") %>
 <%- include("partials/footer") %>

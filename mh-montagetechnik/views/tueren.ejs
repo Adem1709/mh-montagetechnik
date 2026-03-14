@@ -1,0 +1,281 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<main class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <h1>Türen</h1>
+      <p class="muted">
+        Moderne Türlösungen mit professioneller Montage – hochwertig, sicher und optisch passend zu Ihrem Projekt.
+      </p>
+    </div>
+
+    <section class="category-hero reveal">
+      <div class="category-hero__media">
+        <img src="/public/img/services/tueren.jpg" alt="Türsysteme">
+      </div>
+
+      <div class="category-hero__content">
+        <span class="tag">Tür Systeme</span>
+        <h2>Moderne Türen für Sicherheit, Design und Alltag</h2>
+        <p>
+          Wir bieten hochwertige Türsysteme für Wohnhäuser, Nebeneingänge und moderne Innenbereiche – sauber montiert und professionell umgesetzt.
+        </p>
+
+        <div class="hero-card__checks">
+          <div>✓ Hochwertige Türsysteme</div>
+          <div>✓ Professionelle Montage</div>
+          <div>✓ Moderne Optik & Sicherheit</div>
+        </div>
+
+        <div class="hero-card__actions" style="margin-top:18px;">
+          <a class="btn btn--primary" href="/kontakt#angebot">Angebot anfordern</a>
+          <a class="btn btn--ghost" href="/galerie">Projekte ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2>Türarten</h2>
+        <p class="muted">
+          Wählen Sie eine Türart und entdecken Sie Materialien, Farben und Ausführungen.
+        </p>
+      </div>
+
+      <div class="tueren-tabs-showcase reveal">
+
+        <div class="tueren-tabs" role="tablist" aria-label="Türarten">
+          <button class="tueren-tab is-active"
+            type="button"
+            data-title="Haustüren"
+            data-description="Moderne Haustüren verbinden Sicherheit, Wärmedämmung und Design in einer hochwertigen Eingangslösung für Ihr Zuhause."
+            data-image="/public/img/doors/haustueren.jpg"
+            data-materials="Kunststoff|Aluminium"
+            data-colors="Weiß|Anthrazit|Holzoptik|Sonderfarben auf Anfrage"
+            data-options="Seitenteil möglich|Glasausschnitt möglich|Moderne Griffsysteme|Verschiedene Designs">
+            Haustüren
+          </button>
+
+          <button class="tueren-tab"
+            type="button"
+            data-title="Nebeneingangstüren"
+            data-description="Praktische und robuste Lösungen für Keller, Garage, Nebenräume und zusätzliche Zugänge – funktional und langlebig."
+            data-image="/public/img/doors/nebeneingangstueren.jpg"
+            data-materials="Kunststoff|Aluminium"
+            data-colors="Weiß|Anthrazit|Sonderfarben auf Anfrage"
+            data-options="Robuste Ausführung|Pflegeleicht|Sichere Verriegelung|Praktische Lösungen für Nebenbereiche">
+            Nebeneingangstüren
+          </button>
+
+          <button class="tueren-tab"
+            type="button"
+            data-title="Schiebetüren"
+            data-description="Schiebetüren schaffen einen eleganten Übergang zwischen innen und außen und bieten moderne Optik mit hoher Funktionalität."
+            data-image="/public/img/doors/schiebetueren.jpg"
+            data-materials="Kunststoff|Aluminium"
+            data-colors="Weiß|Anthrazit|Holzoptik|Sonderfarben auf Anfrage"
+            data-options="Große Öffnungen|Mehr Tageslicht|Moderne Optik|Komfortable Bedienung">
+            Schiebetüren
+          </button>
+
+          <button class="tueren-tab"
+            type="button"
+            data-title="Innentüren"
+            data-description="Stilvolle Innentüren für Wohnbereiche mit passender Optik, funktionaler Ausführung und sauberer Integration ins Raumkonzept."
+            data-image="/public/img/doors/innentueren.jpg"
+            data-materials="Holzoptik|Dekorvarianten"
+            data-colors="Weiß|Holzoptik|Anthrazit|Weitere Varianten auf Anfrage"
+            data-options="Klassische Designs|Moderne Linien|Verschiedene Oberflächen|Passend zum Innenraum">
+            Innentüren
+          </button>
+        </div>
+
+        <div class="tueren-stage" id="tuerenStage">
+          <div class="tueren-stage__image-wrap">
+            <img id="tuerenImage" class="is-visible" src="/public/img/doors/haustueren.jpg" alt="Türart">
+          </div>
+
+          <div class="tueren-stage__overlay is-visible" id="tuerenOverlay">
+            <h3 id="tuerenTitle">Haustüren</h3>
+            <p id="tuerenDescription">
+              Moderne Haustüren verbinden Sicherheit, Wärmedämmung und Design in einer hochwertigen Eingangslösung für Ihr Zuhause.
+            </p>
+          </div>
+        </div>
+
+        <div class="tueren-info-grid" id="tuerenInfoGrid">
+
+          <article class="tueren-info-card">
+            <h4>Materialien</h4>
+            <ul id="tuerenMaterialsList">
+              <li>Kunststoff</li>
+              <li>Aluminium</li>
+            </ul>
+          </article>
+
+          <article class="tueren-info-card">
+            <h4>Farben</h4>
+            <div class="tueren-color-list" id="tuerenColorsList">
+              <span class="tueren-color-chip"><i class="color-dot color-dot--white"></i>Weiß</span>
+              <span class="tueren-color-chip"><i class="color-dot color-dot--anthrazit"></i>Anthrazit</span>
+              <span class="tueren-color-chip"><i class="color-dot color-dot--special"></i>Holzoptik</span>
+              <span class="tueren-color-note">Sonderfarben auf Anfrage</span>
+            </div>
+          </article>
+
+          <article class="tueren-info-card">
+            <h4>Optionen</h4>
+            <ul id="tuerenOptionsList">
+              <li>Seitenteil möglich</li>
+              <li>Glasausschnitt möglich</li>
+              <li>Moderne Griffsysteme</li>
+              <li>Verschiedene Designs</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:0;">
+      <div class="premium-cta">
+        <div>
+          <span class="section-kicker">Beratung & Angebot</span>
+          <h2>Sie planen eine neue Tür?</h2>
+          <p class="muted">
+            Wir beraten Sie zu Türart, Material, Farbe und professioneller Montage.
+          </p>
+        </div>
+
+        <div class="premium-cta__actions">
+          <a class="btn btn--primary" href="/kontakt#angebot">Jetzt anfragen</a>
+          <a class="btn btn--ghost" href="/produkte">Weitere Produkte</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+  (function () {
+    const tabs = document.querySelectorAll(".tueren-tab");
+    const stage = document.getElementById("tuerenStage");
+    const image = document.getElementById("tuerenImage");
+    const overlay = document.getElementById("tuerenOverlay");
+    const title = document.getElementById("tuerenTitle");
+    const description = document.getElementById("tuerenDescription");
+    const infoGrid = document.getElementById("tuerenInfoGrid");
+    const materialsList = document.getElementById("tuerenMaterialsList");
+    const colorsList = document.getElementById("tuerenColorsList");
+    const optionsList = document.getElementById("tuerenOptionsList");
+
+    if (!tabs.length) return;
+
+    function fillList(target, values) {
+      target.innerHTML = "";
+      values.forEach(value => {
+        if (!value) return;
+        const li = document.createElement("li");
+        li.textContent = value;
+        target.appendChild(li);
+      });
+    }
+
+    function getColorClass(value) {
+      const v = value.toLowerCase();
+      if (v.includes("weiß")) return "color-dot--white";
+      if (v.includes("anthrazit")) return "color-dot--anthrazit";
+      return "color-dot--special";
+    }
+
+    function fillColors(target, values) {
+      target.innerHTML = "";
+
+      values.forEach(value => {
+        if (!value) return;
+
+        const lower = value.toLowerCase();
+
+        if (lower.includes("anfrage")) {
+          const note = document.createElement("span");
+          note.className = "tueren-color-note";
+          note.textContent = value;
+          target.appendChild(note);
+          return;
+        }
+
+        const chip = document.createElement("span");
+        chip.className = "tueren-color-chip";
+
+        const dot = document.createElement("i");
+        dot.className = `color-dot ${getColorClass(value)}`;
+
+        const text = document.createElement("span");
+        text.textContent = value;
+
+        chip.appendChild(dot);
+        chip.appendChild(text);
+        target.appendChild(chip);
+      });
+    }
+
+    function animateOut() {
+      stage.classList.add("is-switching");
+      image.classList.remove("is-visible");
+      overlay.classList.remove("is-visible");
+      infoGrid.classList.remove("is-visible");
+    }
+
+    function animateIn() {
+      requestAnimationFrame(() => {
+        image.classList.add("is-visible");
+        overlay.classList.add("is-visible");
+        infoGrid.classList.add("is-visible");
+        stage.classList.remove("is-switching");
+      });
+    }
+
+    function updateTab(tab) {
+      tabs.forEach(btn => btn.classList.remove("is-active"));
+      tab.classList.add("is-active");
+
+      tab.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+
+      const titleValue = tab.dataset.title || "";
+      const descriptionValue = tab.dataset.description || "";
+      const imageValue = tab.dataset.image || "";
+      const materialsValue = (tab.dataset.materials || "").split("|");
+      const colorsValue = (tab.dataset.colors || "").split("|");
+      const optionsValue = (tab.dataset.options || "").split("|");
+
+      animateOut();
+
+      setTimeout(() => {
+        image.src = imageValue;
+        title.textContent = titleValue;
+        description.textContent = descriptionValue;
+
+        fillList(materialsList, materialsValue);
+        fillColors(colorsList, colorsValue);
+        fillList(optionsList, optionsValue);
+
+        animateIn();
+      }, 260);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => updateTab(tab));
+    });
+
+    infoGrid.classList.add("is-visible");
+  })();
+</script>
+
+<%- include("partials/footer") %>

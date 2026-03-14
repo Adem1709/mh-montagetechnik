@@ -24,7 +24,7 @@ body {
     color: var(--text);
     background: #f4f6f8;
     line-height: 1.55;
-    padding-top: 5px; /* Account for fixed header */
+    padding-top: 108px; /* tighter offset under fixed navbar */
 }
 
 img {
@@ -125,6 +125,10 @@ select {
     }
 } */
 @media (max-width:768px){
+
+    body {
+        padding-top: 92px;
+    }
 
   .grid--2,
   .grid--3,
